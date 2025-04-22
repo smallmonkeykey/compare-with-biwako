@@ -8,9 +8,16 @@
     "compare-with-biwako": "./main.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fix": "prettier --write . && eslint . --fix",
+    "lint": "prettier --check . && eslint ."
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.25.1",
+    "eslint": "^9.25.1",
+    "prettier": "^3.5.3"
+  }
 }
