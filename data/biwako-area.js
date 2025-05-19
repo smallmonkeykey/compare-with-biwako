@@ -1,1 +1,1 @@
-const BIWAKO_AREA = 669.2;
+export const BIWAKO_AREA = 669.2;
