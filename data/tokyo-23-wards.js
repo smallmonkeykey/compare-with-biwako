@@ -1,12 +1,14 @@
-export const WARDS = {
-  shibuya: {
-    jp: "渋谷区",
-    aliases: ["渋谷区", "渋谷", "shibuya", "shibuya-ku"],
+export const WARDS = [
+  {
+    id: "shibuya",
+    name: "渋谷区",
     area: 15.11,
+    aliases: ["渋谷", "渋谷区", "shibuya", "shibuya-ku"],
   },
-  shinjuku: {
-    jp: "新宿区",
-    aliases: ["新宿区", "新宿", "shinjuku", "shinjuku-ku"],
+  {
+    id: "shinjuku",
+    name: "新宿区",
     area: 18.23,
+    aliases: ["新宿", "新宿区", "shinjuku", "shinjuku-ku"],
   },
-};
+];

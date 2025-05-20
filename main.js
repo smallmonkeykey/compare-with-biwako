@@ -1,9 +1,26 @@
 #!/usr/bin/env node
-import { BIWAKO_AREA } from "./data/biwako-area.js";
+import { BIWAKO } from "./data/biwako-area.js";
 import { WARDS } from "./data/tokyo-23-wards.js";
+import { Area } from "./area.js";
+import { AreaCompare } from "./area_compare.js";
+import * as util from "node:util";
 
-const compare = Math.floor(BIWAKO_AREA / WARDS.shibuya.area);
+const { values, positionals } = util.parseArgs({
+  allowPositionals: true,
+  options: {
+    quiz: {
+      type: "boolean",
+      short: "q",
+    },
+  },
+});
 
-console.log(`${WARDS.shibuya.jp}: ■`);
-console.log(`琵琶湖: ${"■".repeat(compare)}`);
-console.log(`${WARDS.shibuya.jp}は琵琶湖の 1/${compare} の大きさです`);
+const matchedWard = WARDS.find((ward) =>
+  ward.aliases.some((alias) => alias.toLowerCase().includes(positionals[0])),
+);
+
+const biwakoArea = new Area(BIWAKO);
+const wardArea = new Area(matchedWard);
+
+const result = new AreaCompare(biwakoArea, wardArea);
+console.log(result.printMessage());

@@ -1,1 +1,5 @@
-export const BIWAKO_AREA = 669.2;
+export const BIWAKO = {
+  id: "biwako",
+  name: "琵琶湖",
+  area: 669.2,
+};
