@@ -12,14 +12,14 @@ export class Quiz {
       const question = {
         type: "select",
         name: "ratio",
-        message: `問題: 琵琶湖は${this.compare.wardName}の何倍？`,
+        message: `\n問題: 琵琶湖は${this.compare.wardName}の何倍？`,
         choices: this.#makeChoice(),
       };
       const answer = await prompt(question);
       if (Number(answer.ratio) === this.correctNumber) {
-        console.log(`正解🥳 琵琶湖は渋谷区の${this.correctNumber}倍です`);
+        console.log(`\n正解🥳 琵琶湖は渋谷区の${this.correctNumber}倍です\n`);
       } else {
-        console.log(`不正解😭 正解は${this.correctNumber}倍です`);
+        console.log(`\n不正解😭 正解は${this.correctNumber}倍です\n`);
       }
     })();
   }

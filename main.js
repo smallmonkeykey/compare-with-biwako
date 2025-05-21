@@ -32,7 +32,7 @@ if (values.quiz) {
   );
 
   if (matchedWard === undefined) {
-    console.log("指定された区は見つかりませんでした😢");
+    console.log("\n指定された区は見つかりませんでした😢\n");
   } else {
     const biwakoArea = new Area(BIWAKO);
     const wardArea = new Area(matchedWard);
