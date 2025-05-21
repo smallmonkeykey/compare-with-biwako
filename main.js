@@ -31,9 +31,13 @@ if (values.quiz) {
     ward.aliases.some((alias) => alias.toLowerCase().includes(positionals[0])),
   );
 
-  const biwakoArea = new Area(BIWAKO);
-  const wardArea = new Area(matchedWard);
+  if (matchedWard === undefined) {
+    console.log("指定された区は見つかりませんでした😢");
+  } else {
+    const biwakoArea = new Area(BIWAKO);
+    const wardArea = new Area(matchedWard);
 
-  const result = new AreaCompare(biwakoArea, wardArea);
-  console.log(result.printMessage());
+    const result = new AreaCompare(biwakoArea, wardArea);
+    console.log(result.printMessage());
+  }
 }
