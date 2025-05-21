@@ -3,6 +3,8 @@ import { BIWAKO } from "./data/biwako-area.js";
 import { WARDS } from "./data/tokyo-23-wards.js";
 import { Area } from "./area.js";
 import { AreaCompare } from "./area_compare.js";
+import { Random } from "./random.js";
+import { Quiz } from "./quiz.js";
 import * as util from "node:util";
 
 const { values, positionals } = util.parseArgs({
@@ -15,12 +17,23 @@ const { values, positionals } = util.parseArgs({
   },
 });
 
-const matchedWard = WARDS.find((ward) =>
-  ward.aliases.some((alias) => alias.toLowerCase().includes(positionals[0])),
-);
+if (values.quiz) {
+  const random = new Random();
+  const randomWard = random.getRandomWard();
+  const randomWardArea = new Area(randomWard);
+  const biwakoArea = new Area(BIWAKO);
+  const wardArea = new Area(randomWardArea);
+  const compare = new AreaCompare(biwakoArea, wardArea);
+  const quiz = new Quiz(compare);
+  quiz.start();
+} else {
+  const matchedWard = WARDS.find((ward) =>
+    ward.aliases.some((alias) => alias.toLowerCase().includes(positionals[0])),
+  );
 
-const biwakoArea = new Area(BIWAKO);
-const wardArea = new Area(matchedWard);
+  const biwakoArea = new Area(BIWAKO);
+  const wardArea = new Area(matchedWard);
 
-const result = new AreaCompare(biwakoArea, wardArea);
-console.log(result.printMessage());
+  const result = new AreaCompare(biwakoArea, wardArea);
+  console.log(result.printMessage());
+}

@@ -21,6 +21,7 @@
     "prettier": "^3.5.3"
   },
   "dependencies": {
+    "enquirer": "^2.4.1",
     "globals": "^16.1.0"
   }
 }
