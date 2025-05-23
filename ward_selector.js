@@ -22,4 +22,3 @@ export class WardSelector {
     return selectedWard;
   }
 }
-
