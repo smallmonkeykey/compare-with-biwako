@@ -2,15 +2,18 @@
 import * as util from "node:util";
 import { CompareWithBiwakoApp } from "./compare_with_biwako_app.js";
 
-const { values, positionals } = util.parseArgs({
-  allowPositionals: true,
-  options: {
-    quiz: {
-      type: "boolean",
-      short: "q",
+try {
+  const { values, positionals } = util.parseArgs({
+    allowPositionals: true,
+    options: {
+      quiz: {
+        type: "boolean",
+        short: "q",
+      },
     },
-  },
-});
-
-const app = new CompareWithBiwakoApp(values, positionals);
-await app.exec();
+  });
+  const app = new CompareWithBiwakoApp(values, positionals);
+  await app.exec();
+} catch (e) {
+  console.error(e.message);
+}
