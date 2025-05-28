@@ -1,20 +1,32 @@
 {
   "name": "compare-with-biwako",
   "version": "1.0.0",
-  "description": "",
   "type": "module",
   "main": "main.js",
   "bin": {
-    "compare-with-biwako": "./main.js"
+    "compare-with-biwako": "main.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "fix": "prettier --write . && eslint . --fix",
     "lint": "prettier --check . && eslint ."
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smallmonkeykey/compare-with-biwako.git"
+  },
+  "keywords": [
+    "biwako",
+    "Lake Biwa",
+    "tokyo",
+    "compare",
+    "area"
+  ],
   "author": "",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smallmonkeykey/compare-with-biwako/issues"
+  },
   "devDependencies": {
     "@eslint/js": "^9.25.1",
     "eslint": "^9.25.1",
@@ -23,5 +35,6 @@
   "dependencies": {
     "enquirer": "^2.4.1",
     "globals": "^16.1.0"
-  }
+  },
+  "description": "This npm can compare the size of Lake Biwa and the 23 wards of Tokyo"
 }
