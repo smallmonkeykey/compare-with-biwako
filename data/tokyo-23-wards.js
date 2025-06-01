@@ -128,13 +128,13 @@ export const WARDS = [
   {
     id: "katsushika",
     name: "葛飾区",
-    area: 34.80,
+    area: 34.8,
     aliases: ["葛飾", "葛飾区", "katsushika", "katsushika-ku"],
   },
   {
     id: "edogawa",
     name: "江戸川区",
-    area: 49.90,
+    area: 49.9,
     aliases: ["江戸川", "江戸川区", "edogawa", "edogawa-ku"],
   },
 ];
