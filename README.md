@@ -6,9 +6,9 @@
 # インストール
 
 npmをインストールします<br>
-`npm install -g compare-with-biwako`<br>
+`npm install compare-with-biwako`<br>
 または<br>
-`npx compare-with-biwako`
+`npx compare-with-biwako` で実行
 
 # 使い方
 
