@@ -13,7 +13,7 @@ try {
     },
   });
   const app = new CompareWithBiwakoApp(values, positionals);
-  await app.exec();
+  await app.run();
 } catch (e) {
   console.error(e.message);
 }

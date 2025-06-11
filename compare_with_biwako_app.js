@@ -12,15 +12,15 @@ export class CompareWithBiwakoApp {
     this.positionals = positionals;
   }
 
-  async exec() {
+  async run() {
     if (this.values.quiz) {
       this.#runQuiz();
     } else if (this.values.quiz === false) {
       console.log("command not found");
     } else if (this.positionals.length === 0) {
-      await this.#selectWard();
+      await this.#runWardSelect();
     } else {
-      this.#findWard();
+      this.#runWardSearch();
     }
   }
 
@@ -32,18 +32,18 @@ export class CompareWithBiwakoApp {
     quiz.start();
   }
 
-  async #selectWard() {
+  async #runWardSelect() {
     const wardSelector = new WardSelector();
     const selectedWard = await wardSelector.select();
     const result = new AreaCompare(new Area(BIWAKO), new Area(selectedWard));
     console.log(result.getMessage());
   }
 
-  #findWard() {
+  #runWardSearch() {
     const matchedWard = WARDS.find((ward) =>
       ward.aliases.some((alias) =>
-        alias.toLowerCase().includes(this.positionals[0]),
-      ),
+        alias.toLowerCase().includes(this.positionals[0])
+      )
     );
 
     if (matchedWard === undefined) {
