@@ -42,8 +42,8 @@ export class CompareWithBiwakoApp {
   #runWardSearch() {
     const matchedWard = WARDS.find((ward) =>
       ward.aliases.some((alias) =>
-        alias.toLowerCase().includes(this.positionals[0])
-      )
+        alias.toLowerCase().includes(this.positionals[0]),
+      ),
     );
 
     if (matchedWard === undefined) {
