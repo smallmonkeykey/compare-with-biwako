@@ -36,7 +36,7 @@ export class CompareWithBiwakoApp {
     const wardSelector = new WardSelector();
     const selectedWard = await wardSelector.select();
     const result = new AreaCompare(new Area(BIWAKO), new Area(selectedWard));
-    console.log(result.printMessage());
+    console.log(result.getMessage());
   }
 
   #findWard() {
@@ -50,7 +50,7 @@ export class CompareWithBiwakoApp {
       console.log("\n指定された区は見つかりませんでした😢\n");
     } else {
       const result = new AreaCompare(new Area(BIWAKO), new Area(matchedWard));
-      console.log(result.printMessage());
+      console.log(result.getMessage());
     }
   }
 }
